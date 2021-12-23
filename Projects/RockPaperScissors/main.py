@@ -1,3 +1,4 @@
+#!/bin/python3
 import random
 
 rock = """
@@ -28,19 +29,19 @@ scissors = """
 """
 
 choices = [rock, paper, scissors]
-usersChoice = int(input("\nWhat do you want to choose? Type 0 for Rock, 1 for Paper, or 2 for Scissors."))
+usersChoice = int(input("\nWhat do you want to choose? Type 0 for Rock, 1 for Paper, or 2 for Scissors: "))
 computersChoice = random.randint(0, 2)
 print("\nUser chooses:" + choices[usersChoice])
 print("\nComputer chooses:" + choices[computersChoice])
 if usersChoice == computersChoice:
-    print("IT IS A DRAW!\n")
+    print("\nIT IS A DRAW!\n")
 elif usersChoice == 0 and computersChoice == 2:
-    print("YOU WIN!\n")
+    print("\nYOU WIN!\n")
 elif usersChoice == 2 and computersChoice == 0:
-    print("YOU LOSE!\n")
+    print("\nYOU LOSE!\n")
 elif usersChoice > computersChoice: 
-    print("YOU WIN!\n")
+    print("\nYOU WIN!\n")
 elif computersChoice > usersChoice: 
-    print("YOU LOSE!\n")
+    print("\nYOU LOSE!\n")
 else:
-    print("INVALID KEY! GAME OVER\n")
+    exit("\nINVALID KEY! GAME OVER\n")
