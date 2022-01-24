@@ -4,6 +4,8 @@ from hangman_art import logo
 from hangman_art import stages
 from hangman_words import word_list
 
+print(logo, "\n\n")
+
 chosen_word = random.choice(word_list)
 word_length = len(chosen_word)
 
@@ -11,7 +13,7 @@ end_of_game = False
 lives = 6
 
 # Testing code
-print(f'Pssst, the solution is {chosen_word}.')
+# print(f'Pssst, the solution is {chosen_word}.')
 
 display = []
 for _ in range(word_length):
@@ -33,12 +35,12 @@ while not end_of_game:
         lives -= 1
         if lives == 0:
             end_of_game = True
-            print("\nYOU LOSE\n")
+            print("\nYOU LOSE!\n")
 
     print(f"{' '.join(display)}")
 
     if "_" not in display:
         end_of_game = True
-        print("\nYOU WIN\n")
+        print("\nYOU WIN!\n")
 
     print(stages[lives])
