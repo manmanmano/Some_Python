@@ -36,6 +36,8 @@ def calculate_score(cards):
 
 
 def find_winner(my_score, dealer_score):
+    if my_score > 21 and dealer_score > 21:
+        return "YOU LOSE, YOU WENT OVER"
     if my_score == dealer_score:
         return "DRAW"
     elif dealer_score == 0:
@@ -81,7 +83,7 @@ def play():
     print(f"Your final cards: {my_cards}, final score: {my_score}")
     print(f"Dealer's final cards: {my_cards}, final score: {dealer_score}")
     winner_is = find_winner(my_score, dealer_score)
-    print(winner_is)
+    print("\n", winner_is, "\n")
 
 
 while input("Do you want to play a game of Blackjack? Type 'y' or 'n': ") == 'y':
